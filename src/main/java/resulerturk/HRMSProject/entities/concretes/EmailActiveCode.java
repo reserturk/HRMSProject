@@ -3,11 +3,8 @@ package resulerturk.HRMSProject.entities.concretes;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-
-import org.springframework.beans.factory.annotation.Autowired;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -17,17 +14,19 @@ import lombok.NoArgsConstructor;
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name="job_position")
-public class JobPosition {
+@Table(name="email_active_code")
+public class EmailActiveCode {
+	
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY )
-	@Column(name="position_id")
-	private int positionId;
+	@GeneratedValue
+	@Column(name="active_id")
+	private int active_id;
 	
-	@Column(name="position_name")
-	private String positionName;
-
-
+	@Column(name="register_id")
+	private int register_id;
+	
+	@Column(name="active_code")
+	private String active_code;
 
 }
