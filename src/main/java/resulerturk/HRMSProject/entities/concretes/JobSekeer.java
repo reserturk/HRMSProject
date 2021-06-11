@@ -5,6 +5,7 @@ import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
@@ -15,12 +16,11 @@ import lombok.NoArgsConstructor;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
+@PrimaryKeyJoinColumn(name="job_sekeer_id")
 @Table(name="job_sekeer")
-public class JobSekeer {
+public class JobSekeer extends Register{
 	
-	@Id
-	@Column(name="register_id")
-	private int registerId;
+	
 	
 	@Column(name="first_name")
 	private String firstName;

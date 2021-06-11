@@ -7,5 +7,6 @@ import resulerturk.HRMSProject.entities.concretes.JobSekeer;
 
 public interface JobSekeerDao extends JpaRepository<JobSekeer,Integer>{
 
+	
 	JobSekeer getByFirstName(String firstName);
 }

@@ -1,24 +1,33 @@
 package resulerturk.HRMSProject.entities.concretes;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
+import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 @Data
 @Entity
+@EqualsAndHashCode(callSuper = true)
 @NoArgsConstructor
 @AllArgsConstructor
+@PrimaryKeyJoinColumn(name="employer_id")
 @Table(name="employer")
-public class Employer {
+public class Employer extends Register{
 	
-	@Id
-	@Column(name="register_id")
-	private int registerId;
+
+	
 	
 	@Column(name="company_name")
 	private String companyName;
@@ -32,6 +41,10 @@ public class Employer {
 	@Column(name="email_activated")
 	private boolean emailActivated;
 
+
+
+	@OneToMany(mappedBy = "employer", fetch = FetchType.LAZY)
+	private List<AddJob> addJobs;
 
 	
 	
