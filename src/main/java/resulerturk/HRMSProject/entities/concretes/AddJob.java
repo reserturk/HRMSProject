@@ -1,6 +1,7 @@
 package resulerturk.HRMSProject.entities.concretes;
 
 import java.sql.Date;
+import java.time.LocalDate;
 import java.time.ZonedDateTime;
 
 import javax.persistence.CascadeType;
@@ -15,6 +16,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -49,10 +51,10 @@ public class AddJob {
 	private int jobNumber;
 	
 	@Column(name="job_create_time")
-	private ZonedDateTime jobCreateTime;
+	private LocalDate jobCreateTime;
 	
 	@Column(name="job_dead_line")
-	private ZonedDateTime jobDeadLine;
+	private LocalDate jobDeadLine;
 	
 	@Column(name="actived_job")
 	private boolean activedJob;

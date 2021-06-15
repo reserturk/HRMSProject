@@ -2,12 +2,14 @@ package resulerturk.HRMSProject.entities.concretes;
 
 import java.util.Date;
 
+import java.util.List;
+
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -34,6 +36,9 @@ public class JobSekeer extends Register{
 	@Column(name="birty_day")
 	private Date birtyDay;
 	
+	/*@OneToOne(mappedBy = "job_sekeer", fetch = FetchType.LAZY)
+	private Images images;*/
 
-
+	@OneToOne
+	private CreateCv createCv;
 }

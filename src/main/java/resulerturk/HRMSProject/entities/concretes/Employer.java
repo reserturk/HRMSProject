@@ -19,7 +19,6 @@ import lombok.NoArgsConstructor;
 
 @Data
 @Entity
-@EqualsAndHashCode(callSuper = true)
 @NoArgsConstructor
 @AllArgsConstructor
 @PrimaryKeyJoinColumn(name="employer_id")
@@ -43,7 +42,7 @@ public class Employer extends Register{
 
 
 
-	@OneToMany(mappedBy = "employer", fetch = FetchType.LAZY)
+	@OneToMany(mappedBy = "employer")
 	private List<AddJob> addJobs;
 
 	

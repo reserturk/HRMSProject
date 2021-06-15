@@ -1,5 +1,6 @@
 package resulerturk.HRMSProject.dataAccess.abstracts;
 
+import java.time.LocalDate;
 import java.time.ZonedDateTime;
 import java.util.List;
 
@@ -22,7 +23,7 @@ public interface AddJobDao extends JpaRepository<AddJob, Integer> {
 	
 	List<AddJob> getByActivedJobTrue();
 	
-	List<AddJob> getByJobCreateTimeAndActivedJob(ZonedDateTime createTime, boolean actived);
+	List<AddJob> getByJobCreateTimeAndActivedJob(LocalDate createTime, boolean actived);
 
 	@Query("Select new resulerturk.HRMSProject.entities.dtos.AddJobWithEmployerActiveDto(a.addJobId,e.companyName,a.activedJob) from Employer e Inner Join e.addJobs a")
 	List<AddJobWithEmployerActiveDto> getAddJobEmployerIdWithActived();
